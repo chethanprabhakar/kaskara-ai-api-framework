@@ -1,0 +1,14 @@
+db.sql
+.env
+
+# vs code stuff
+__pycache__
+.vscode
+
+.env.local
+*/.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+venv

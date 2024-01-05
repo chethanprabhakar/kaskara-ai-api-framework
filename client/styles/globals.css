@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MrsSheppards';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('MrsSheppards'), url(/fonts/Mrs_Sheppards/MrsSheppards-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'FjallaOne';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('FjallaOne'), url(/fonts/Fjalla_One/FjallaOne-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('BebasNeue'), url(/fonts/Bebas_Neue/BebasNeue-Regular.ttf) format('truetype');
+}
+
+html,
+body {
+  padding: 0;
+  background-color: white;
+  color: black;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.protected {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unauthorized {
+  /* position: fixed; */
+  font-size: 0.63rem;
+  margin: 0 0 20px 0;
+  color: #3f3f3f;
+  /* left: 0;
+  right: 0;
+  bottom: 60px; */
+}
+
+.kaskara-logo {
+  position: relative;
+  top: 2px;
+  min-width: 56px;
+}
+
+.gridprivacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 1rem;
+  margin-bottom: 200px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+label,input{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[type=text] {
+  width: 100%;
+  padding:10px;
+  margin: 10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  background-color: #fafafa;
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+  transition: .3s box-shadow;
+}
+
+input[type=checkbox] {
+  padding:10px;
+  margin: 10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  background-color: #fafafa;
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+  transition: .3s box-shadow;
+  width: 20px;
+  height: 20px;
+}
