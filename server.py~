@@ -1,0 +1,18 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/health-checks', methods=['POST'])
+def get_health_checks():
+    prompt = request.json.get('prompt')
+    response = request.post
+    health_checks = ["Check 1", "Check 2", "Check 3"]
+    return jsonify({"health_checks": health_checks})
+
+@app.route('/advice', methods=['POST'])
+def get_advice():
+    health_checks_done = request.json.get('health_checks_done')
+    # Process the list of health checks done and provide advice
+    advice = "Advice on how to get remaining checks at low or no costs"
+    return jsonify({"advice": advice})
+
