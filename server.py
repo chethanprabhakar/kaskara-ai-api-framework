@@ -34,7 +34,7 @@ json_data = {
 def get_health_checks():
     data = request.get_json()
     prompt = data["prompt"]
-    # json_data["contents"]["parts"]["text"] = prompt
+    #json_data["contents"]["parts"]["text"] = prompt
     response = requests.post(url, data=json_data, headers=headers)
     print(response.json())
     health_checks = ["Check 1", "Check 2", "Check 3"]
