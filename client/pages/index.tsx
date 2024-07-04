@@ -9,6 +9,7 @@ import Checkbox from "../components/forms/FormCheckbox";
 import { AppProps } from "next/app";
 import Step1Fitness from "../components/onboarding/step1fitness";
 import Image from "next/image";
+import HomeData from "@/components/charts/home";
 
 const Home = ({ Component, pageProps }: AppProps) => {
   const { openSignIn } = useClerk();
@@ -16,30 +17,38 @@ const Home = ({ Component, pageProps }: AppProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
-          <SignedOut>
+        <SignedOut>
           <div className={styles.grid}>
-          <h1 className={styles.title}>
-            <a className="kaskara-logo" href="https://www.kaskaragroup.com" target="blank">
-              <Image src="/kaskara-logo.png" alt="kaskara" height="100" width="300" priority />
-            </a>
-          </h1>
-          <br/>
-            <p className={styles.description}>
-              Demo App Framework
-            </p>
-            <br/>
-            <br/>
+            <h1 className={styles.title}>
+              <a
+                className="kaskara-logo"
+                href="https://www.kaskaragroup.com"
+                target="blank"
+              >
+                <Image
+                  src="/kaskara-logo.png"
+                  alt="kaskara"
+                  height="100"
+                  width="300"
+                  priority
+                />
+              </a>
+            </h1>
+            <br />
+            <p className={styles.description}>Demo App Framework</p>
+            <br />
+            <br />
             <a onClick={() => openSignIn()} className={styles.signInButton}>
-                Sign in
+              Sign in
             </a>
-            </div>
-          </SignedOut>
-          <SignedIn>
-            <div>
-              Put some content here...
-            </div>
-          </SignedIn>
-        
+          </div>
+        </SignedOut>
+        <SignedIn>
+          <div>
+            {/* Put some content here... */}
+            <HomeData></HomeData>
+          </div>
+        </SignedIn>
       </div>
     </div>
   );
@@ -66,20 +75,35 @@ const InitialScreening = () => {
 
   return (
     <>
-    <div className={formStyles.formcontainer}>
-    <ul className="flex">
-      <li className="flex-1 mr-2">
-        <a className="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white" href="#">Active Item</a>
-      </li>
-      <li className="flex-1 mr-2">
-        <a className="text-center block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4" href="#">Nav Item</a>
-      </li>
-      <li className="text-center flex-1">
-        <a className="block py-2 px-4 text-gray-400 cursor-not-allowed" href="#">Disabled Item</a>
-      </li>
-    </ul>
-      {/* <Step1Fitness note="1. Are you currently dieting?" /> */}
-      {/* <a className={styles.staticCard}>
+      <div className={formStyles.formcontainer}>
+        <ul className="flex">
+          <li className="flex-1 mr-2">
+            <a
+              className="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white"
+              href="#"
+            >
+              Active Item
+            </a>
+          </li>
+          <li className="flex-1 mr-2">
+            <a
+              className="text-center block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-2 px-4"
+              href="#"
+            >
+              Nav Item
+            </a>
+          </li>
+          <li className="text-center flex-1">
+            <a
+              className="block py-2 px-4 text-gray-400 cursor-not-allowed"
+              href="#"
+            >
+              Disabled Item
+            </a>
+          </li>
+        </ul>
+        {/* <Step1Fitness note="1. Are you currently dieting?" /> */}
+        {/* <a className={styles.staticCard}>
         <h2>Welcome!</h2>
         <p>Signed in as: {user?.primaryEmailAddress!.toString()}</p>
       </a>

@@ -4,11 +4,23 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'img.clerk.com',
+        protocol: "https",
+        hostname: "img.clerk.com",
       },
     ],
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.csv$/,
+      loader: "csv-loader",
+      options: {
+        dynamicTyping: true,
+        header: true,
+        skipEmptyLines: true,
+      },
+    });
+    return config;
+  },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
