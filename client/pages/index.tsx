@@ -18,7 +18,8 @@ const Home = ({ Component, pageProps }: AppProps) => {
     <div className={styles.container}>
       <div className={styles.innerContainer}>
         <SignedOut>
-          <div className={styles.grid}>
+          <HomeData></HomeData>
+          {/* <div className={styles.grid}>
             <h1 className={styles.title}>
               <a
                 className="kaskara-logo"
@@ -41,7 +42,7 @@ const Home = ({ Component, pageProps }: AppProps) => {
             <a onClick={() => openSignIn()} className={styles.signInButton}>
               Sign in
             </a>
-          </div>
+          </div> */}
         </SignedOut>
         <SignedIn>
           <div>

@@ -1,10 +1,9 @@
 import "../styles/globals.css";
 import Header from "../components/Header";
-import type {AppProps} from "next/app";
-import {ClerkLoaded, ClerkProvider, SignedIn, SignedOut} from "@clerk/nextjs";
-import {useRouter} from "next/router";
+import type { AppProps } from "next/app";
+import { ClerkLoaded, ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 import BottomCredit from "../components/bottomcredit/BottomCredit";
-
 
 /**
  * List pages you want to be publicly accessible, or leave empty if
@@ -17,8 +16,8 @@ import BottomCredit from "../components/bottomcredit/BottomCredit";
 const publicPages = ["/", "/privacy"];
 
 export const metadata = {
-  title: 'Clerk-Organizations',
-  description: 'Clerk Role-Based Authentication Using Organizations',
+  title: "Clerk-Organizations",
+  description: "Clerk Role-Based Authentication Using Organizations",
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -28,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ClerkProvider {...pageProps}>
       <ClerkLoaded>
         <Header />
-        
+
         {publicPages.includes(router.pathname) ? (
           <main>
             <Component {...pageProps} />
@@ -46,15 +45,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           </>
         )}
 
-
-
         {/* footer */}
-        <footer>
+        {/* <footer>
           <BottomCredit
             label="© 2023 Kaskara Group, LLC. All Rights Reserved."
             privacyLink="/privacy"
           />
-        </footer>
+        </footer> */}
       </ClerkLoaded>
     </ClerkProvider>
   );
